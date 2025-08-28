@@ -14,7 +14,7 @@
     <AssemblyTitle>CustomTitle</AssemblyTitle>
     <Product>CustomTitle</Product>
     <Description>A Hollow Knight Mod</Description>
-    <Copyright>Copyright ©  $year$</Copyright>
+    <Copyright>Copyright © Hien Ngo 2025</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>
