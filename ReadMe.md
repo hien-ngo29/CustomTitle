@@ -16,7 +16,7 @@ A Hollow Knight mod that allows players to use their custom title.
     "HD_Style": "dream.png",
     "Grimm_Style": "grimm.png",
     "Modern_Style": "lifeblood.png",
-    "Radiant_Style": "lifeblood.png",
+    "Radiant_Style": "",
     "GG_Style": "god.png",
     "Shade_Style": "",
     "Infected_Style": "",
@@ -47,4 +47,5 @@ Let's take an example that you want to add a custom title for the menu style of 
 4. That's it! Enjoy
 
 # Issues
+
 Yep I know some of the default menu titles are kinda low-quality :)
