@@ -11,6 +11,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using HKMirror.Hooks.OnHooks;
 
 namespace CustomTitle
 {
@@ -20,12 +21,12 @@ namespace CustomTitle
 
         readonly string modDataDir = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "data");
 
-        public CustomTitle() : base("Custom Title")
+        public override void Initialize()
         {
-            On.MenuStyleTitle.SetTitle += FixMenuTitle;
+            OnMenuStyleTitle.AfterOrig.SetTitle += FixMenuTitle;
         }
 
-        private void FixMenuTitle(On.MenuStyleTitle.orig_SetTitle orig, MenuStyleTitle self, int index)
+        private void FixMenuTitle(OnMenuStyleTitle.Delegates.Params_SetTitle args)
         {
             byte[] fileData;
 
@@ -37,7 +38,6 @@ namespace CustomTitle
             {
                 Log("Failed to load image. " + ex.Message);
                 Log("Switching to default menu title");
-                orig(self, index);
                 return;
             }
 
@@ -53,7 +53,7 @@ namespace CustomTitle
                 SpriteMeshType.FullRect
             );
 
-            self.Title.sprite = RealTitle;
+            args.self.Title.sprite = RealTitle;
         }
 
         private string GetImagePath()
